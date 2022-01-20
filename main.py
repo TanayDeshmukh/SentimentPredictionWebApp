@@ -8,7 +8,6 @@ from fastapi import FastAPI, Request
 
 app = FastAPI()
 
-
 model = DISTILBERTUncased().to(config.DEVICE)
 model.load_state_dict(torch.load(os.path.join(config.MODEL_PATH, "model.pth"), map_location=torch.device(config.DEVICE)))
 model.eval()
